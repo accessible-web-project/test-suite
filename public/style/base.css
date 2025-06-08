@@ -86,6 +86,14 @@ a:hover {
     text-decoration: none;
 }
 
+.warning-box {
+    background-color: #f5c0c0;
+    border: 1px solid darkred;
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: 0.5em;
+}
+
 /** EXAMPLE BOXES **/
 .example-box {
     display: flex;
