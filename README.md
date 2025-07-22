@@ -1,7 +1,7 @@
 A study of Open Source Web Accessibility Testing Tools
 ================================
 
-This repository contains the source code for the thesis project [Incorporating Web Accessibility into a CI/CD Pipeline: A study of Open Source Evaluation Tools](https://www.diva-portal.org/smash/record.jsf?pid=diva2%3A1887999&dswid=4635) by *Elena Moser* and *Jesper Yli-Hukka Högback*. It was further developed to extend the project for the *Assessing Evaluation Tools through Accessibility Standards in Web Development - With CI/CD Pipelines* study, which can viewed here: (not available yet).
+This repository contains the source code for the thesis project [Incorporating Web Accessibility into a CI/CD Pipeline: A study of Open Source Evaluation Tools](https://www.diva-portal.org/smash/record.jsf?pid=diva2%3A1887999&dswid=4635) by *Elena Moser* and *Jesper Yli-Hukka Högback*. It was further developed to extend the project for the *Assessing Evaluation Tools through Accessibility Standards in Web Development - With CI/CD Pipelines* study, which can viewed here: [Assessing Evaluation Tools through Accessibility Standards in Web Development: With CI/CD Pipelines](https://urn.kb.se/resolve?urn=urn:nbn:se:lnu:diva-140096).
 
 **Abstract**: To help ensure that websites across the internet garner compliance for web accessibility, there are defined standards known as the Web Content Accessibility Guidelines (WCAG). Accessibility evaluation tools exist to assess websites, and raise awareness for violations or warnings that can aid in development and quality assurance. This project aids further efforts to provide explainability for WCAG 2.2 criteria, with various contexts and techniques applicable to them, by developing examples onto a website built from Moser and Högback’s study “Incorporating Web Accessibility into a CI/CD Pipeline”. Additionally, with their study of conducting assessment on tools like, Axe-core, Accessibility Checker, and HTML_CodeSniffer through a CI/CD Pipeline with the use of Github Actions, we aimed to contribute to the subject by incorporating the following tools: WebAim’s WAVE, Pa11y, and Google’s Lighthouse. For the assessment of the tools’ performance, our metrics are also adopted from their study, considering the tools ability to identify violations, based on WCAG criteria, error description, and error location. From our overall analysis of the accessibility evaluation tools, we were able to determine Pa11y as the current best performing tool out of all that were tested, as it achieved a 25% average for identifying violations on the test website. This shows that the results capable of being produced by the evaluation tools still remain quite limited. Regardless of their completeness, these results still prove to be effective considering there are violations that the tools can successfully identify with descriptive information. This provides developers better clarity for finding a solution, but there still remains a need for further development on the evaluation tools themselves.
 
@@ -16,7 +16,7 @@ This repository contains the source code for the thesis project [Incorporating W
 
 For our study, we created a test website that includes WCAG violations. The purpose was to create a controlled environment for the performance assessment of the Web Accessibility testing tools. The website was designed using HTML, CSS, JavaScript and locally hosted via the Express.js framework to facilitate URL-based testing tool requirements. Composed of five pages, three are relevant for testing, namely *Perceivable*, *Operable* and *Understandable*. Violations were deliberately included on these three pages for each implemented criterion, ranging from easily detectable, like missing alternative text on images, to those requiring additional context for identification. The website maintains a consistent structure across its pages, except for the Understandable page, which intentionally deviates to highlight the criterion of consistent navigation. This deviation involves swapping the positions of the header and footer elements. Each page follows a standardized layout: a main heading, followed by a guideline and its corresponding criterion. Typically, the criterion section includes explanatory text followed by examples displayed in two boxes: one green, indicating correct implementation, and one red, depicting incorrect approaches. Additional information, denoted by a yellow box, may accompany certain criteria, showcasing existing implementation, examples from other pages, or relevant details. The examples created are mostly derived directly from those provided by [W3C](https://www.w3.org/TR/WCAG21/). For rules lacking clear examples or any examples at all, we had to formulate our own interpretations based on the information provided by [W3C](https://www.w3.org/TR/WCAG21/).
 
-The published website by Moser and Högback can accessed via this link: [https://idasm-unibe-ch.github.io/unibe-web-accessibility/](https://idasm-unibe-ch.github.io/unibe-web-accessibility/). Our updated version can temporarily be found here: [Evaluation Webpage for Web Accessibility Testing Tools](https://robinkxl.github.io/thesis-project/).
+The published website by Moser and Högback can accessed via this link: [https://idasm-unibe-ch.github.io/unibe-web-accessibility/](https://idasm-unibe-ch.github.io/unibe-web-accessibility/). Our updated version can temporarily be found here: [Evaluation Webpage for Web Accessibility Testing Tools](https://accessible-web-project.github.io/test-suite/).
 
 For more details about the test website, please refer to the PDF copy of the thesis.
 
@@ -85,17 +85,17 @@ asqatasun-docker/asqatasun_audit.bash cleanup
 
 # with Lighthouse 
 ./test.bash setup lighthouse
-./test.bash run lighthouse https://robinkxl.github.io/thesis-project/
+./test.bash run lighthouse https://accessible-web-project.github.io/test-suite/
 ./test.bash cleanup lighthouse
 
 # with Pa11y 
 ./test.bash setup pa11y
-./test.bash run pa11y https://robinkxl.github.io/thesis-project/
+./test.bash run pa11y https://accessible-web-project.github.io/test-suite/
 ./test.bash cleanup pa11y
 
 # with WAVE API 
 ./test.bash setup wave
-./test.bash run wave https://robinkxl.github.io/thesis-project/
+./test.bash run wave https://accessible-web-project.github.io/test-suite/
 ./test.bash cleanup wave
 ```
 
